@@ -36,6 +36,8 @@ Please make sure that your commit messages are dated and contain a sufficient de
 Not sure if this section is super necessary, but the idea is that whoever is in charge of notes for the week, should include an outline of what was covered for the week. This would allow for us to organize the structure of the document/textbook and hopefully make edits easier.
 If we dont agree/dont want this section, I have no problem removing it.
 
+---
+
 ## teX edits
 
 
@@ -51,6 +53,8 @@ ALL commit messages should be dated with a GOOD description of what work was don
  ```
 git commit -m "082825, edits made to section covering XX topic. ready for class review
 ```
+
+---
 
 ## Master Files
 ```
