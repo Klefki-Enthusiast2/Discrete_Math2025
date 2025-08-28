@@ -14,7 +14,6 @@ If you have any additional suggestions, feel free to reach out and communicate w
                                                     
 # Preliminary Folder Structure
 
----
 
 ## Written Lecture Notes and Weekly outline
 ```
@@ -26,6 +25,7 @@ If you have any additional suggestions, feel free to reach out and communicate w
 |
 +- weekly outline
 ```
+---
 ### scanned pdf of handwritten notes
 trivial.
 ### initial typed lateX of the notes for the week
@@ -38,7 +38,6 @@ If we dont agree/dont want this section, I have no problem removing it.
 
 ## teX edits
 
----
 
 ```
 # Edits/
@@ -52,8 +51,6 @@ ALL commit messages should be dated with a GOOD description of what work was don
  ```
 git commit -m "082825, edits made to section covering XX topic. ready for class review
 ```
-
----
 
 ## Master Files
 ```
