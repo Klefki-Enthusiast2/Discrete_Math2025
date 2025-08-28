@@ -51,7 +51,8 @@ To prevent bottlenecking, I think we should take Dr Iovino's suggestion and do 1
 ALL commit messages should be dated with a GOOD description of what work was done
  command would look something like:
  ```
-git commit -m "082825, edits made to section covering XX topic. ready for class review
+git commit -m "082825, edits made to section covering XX topic.
+ready for class review
 ```
 
 ---
