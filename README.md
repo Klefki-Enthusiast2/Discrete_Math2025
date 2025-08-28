@@ -4,11 +4,14 @@ Git Hub for Discrete Math, Fall 2025 semester. A place for Graduate Students in 
 Please read through this README closely. Organization is going to be key during this project.
 
 ------------------------------------------------------------------------
+
 Let's collaborate through this repository to complete the task at hand. Please maintain a level or organization and structure in this repository as there are quite a few of us working together on this project. 
 I personally would like to avoid the need for branching as that cna create a lot of confusion, so I think making a folder structure to keep files organized might be the easiest way to go about this.
 If you have any additional suggestions, feel free to reach out and communicate with out group.
                                                       -t
+                                                      
 -------------------------------------------------------------------------
+
 
 # Preliminary Folder Structure
 ## Written Lecture Notes and Weekly outline
