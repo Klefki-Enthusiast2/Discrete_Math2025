@@ -19,6 +19,7 @@ If you have any additional suggestions, feel free to reach out and communicate w
 +- weekly outline
 ```
 ### scanned pdf of handwritten notes
+trivial.
 ### initial typed lateX of the notes for the week
 whoever takes notes for the week should upload their written notes here.
 Additionally, when you convert handwritten -> latex, you should put your initial .tex document here.
