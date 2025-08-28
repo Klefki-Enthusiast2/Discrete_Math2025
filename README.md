@@ -35,6 +35,11 @@ If we dont agree/dont want this section, I have no problem removing it.
 +- .tex files
 ```
 To prevent bottlenecking, I think we should take Dr Iovino's suggestion and do 1 or 2 paragraphs at a time. Furthermore, we should make sure we communicate on what exactly we are working on. If there are multiple people working on the same section, perhaps consider drafting changes on a collaborative document like overleaf or something, then upload one document.
+ALL commit messages should be dated with a GOOD description of what work was done
+ command would look something like:
+ ```
+git commit -m "082825, edits made to section covering XX topic. ready for class review
+```
 
 ## Master Files
 ```
