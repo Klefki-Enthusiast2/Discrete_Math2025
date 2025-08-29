@@ -53,7 +53,7 @@ ALL commit messages should be dated with a GOOD description of what work was don
  command would look something like:
  ```
 git commit -m "082825, edits made to section covering XX topic.
-ready for class review
+ready for class review"
 ```
 
 ---
