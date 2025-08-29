@@ -60,14 +60,14 @@ ready for class review"
 
 ## Master Files
 ```
-#Files_for_sage/
+#complete files/
 |
-+- completed sections
++- completed sections/
 | |
 | +-- chapter 1/
 | +-- chapter 2/
 | +-- so on/
-+- completed notes for sage
++- completed notes for sage/
 ```
 
 ---
