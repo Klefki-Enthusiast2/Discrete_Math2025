@@ -6,15 +6,18 @@ Please read through this README closely. Organization is going to be key during 
 
 ---
 
+Small Admin Note:
 Let's collaborate through this repository to complete the task at hand. Please maintain a level or organization and structure in this repository as there are quite a few of us working together on this project. 
 I personally would like to avoid the need for branching as that cna create a lot of confusion, so I think making a folder structure to keep files organized might be the easiest way to go about this.
 If you have any additional suggestions, feel free to reach out and communicate with out group.
+I dont want to be overly controlling about this repository. You will all have a majority of permissions to work as freely as possible on this repository, but ultimately I will have admin rights here to ensure we do not spaghetti the files that go through here. You will have all available permissions up to branching and push requests. It is not personal, I just do not know all of you yet. I am happy to give you full push rights, but I hate spaghetti, so we'll get there.
+If you are unfamiliar with git, please DO NOT be afraid to ask. I would rather you ask a million questions, than messing things up for the whole class. One bad push can mess up the flow and I am not a fan of having to go backwards on git.
                                                       -t
 
 ---
                                                     
 # Preliminary Folder Structure
-
+I think we should treat this more like a pipeline rather than a folder structure. As files get closer to completion, they will get passed further down the list of folders.
 
 ## Written Lecture Notes and Weekly outline
 ```
@@ -46,6 +49,12 @@ If we dont agree/dont want this section, I have no problem removing it.
 # Edits/
 |
 +- .tex files
+|
++- files for class review
+| |
+| +- week 1/
+| +- week 2/
+| +- so on
 ```
 ---
 To prevent bottlenecking, I think we should take Dr Iovino's suggestion and do 1 or 2 paragraphs at a time. Furthermore, we should make sure we communicate on what exactly we are working on. If there are multiple people working on the same section, perhaps consider drafting changes on a collaborative document like overleaf or something, then upload one document.
