@@ -2,10 +2,13 @@
 
 Git Hub for Discrete Math, Fall 2025 semester. A place for Graduate Students in the class to collaborate on our assigned Textbook project.
 
+<b>
+<i>
 Please read through this README closely. Organization is going to be key during this project.
-
+</i>
+</b>
 ---
-
+<blockquote>
 Small Admin Note:  
 Let's collaborate through this repository to complete the task at hand. Please maintain a level or organization and structure in this repository as there are quite a few of us working together on this project. 
 I personally would like to avoid the need for branching as that cna create a lot of confusion, so I think making a folder structure to keep files organized might be the easiest way to go about this.
@@ -13,7 +16,7 @@ If you have any additional suggestions, feel free to reach out and communicate w
 I dont want to be overly controlling about this repository. You will all have a majority of permissions to work as freely as possible on this repository, but ultimately I will have admin rights here to ensure we do not spaghetti the files that go through here. You will have all available permissions up to branching (if needed) and push requests. It is not personal, I just do not know all of you yet. I am happy to give you full push rights, but I hate spaghetti, so we'll get there.
 If you are unfamiliar with git, please DO NOT be afraid to ask. I would rather you ask a million questions, than messing things up for the whole class. One bad push can mess up the flow and I am not a fan of having to go backwards on git.  
                                                       -t
-
+</blockquote>
 ---
                                                     
 # Preliminary Folder Structure
