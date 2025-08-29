@@ -7,7 +7,7 @@ Git Hub for Discrete Math, Fall 2025 semester. A place for Graduate Students in 
 Please read through this README closely. Organization is going to be key during this project.
 </i>
 </b>
-
+<br>
 <blockquote>
 Small Admin Note: 
 <br>
