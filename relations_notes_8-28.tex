@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb,verbatim, amsthm, graphicx}
+
+\usepackage[symbol]{footmisc}
+
+%exercise environment
+\newcounter{exercise}
+\setcounter{exercise}{0}
+\newenvironment{exercise}{\addtocounter{exercise}{1} \noindent{\bf{Exercise \theexercise.}}}{\vspace{.5cm}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\mat}[4]{\left( \begin{array}{cc} #1 & #2 \\ #3 & #4  \end{array} \right)}
+\newcommand{\smat}[4]{\left( \begin{smallmatrix} #1 & #2 \\ #3 & #4  \end{smallmatrix} \right)}
+
+\textwidth 6.5in
+\textheight 9in
+\oddsidemargin 0in
+\evensidemargin 0in
+\headsep -0.5in
+
+\setlength{\parskip}{0.25cm}
+
+\pagenumbering{gobble}
+\title{Discrete math notes 8-28}
+\author{Jake Borawski}
+\date{September 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Relations}
+
+\subsection{Definitions}
+A relation is a way of associating elements of a set. This is done to partition a larger set into simpler groups that can reveal an underlying structure. A relations can be binary, meaning it relates two elements, or $n$-ary that acts on $n$ or fewer elements. Binary relations are the most common and familiar relations, so will be used in the following definitions, but the definitions themselves extend nicely to relations of any size. An example of a relation is "parent of" and this would be acting on the set of all people. For two people, John and Mary we would read this as "John is the parent of Mary", note the reverse, "Mary is the parent of John" does not hold.
+
+A relation on a set is defined in several equivalent ways. We will begin with a set, $A$, on which the relation, $R$, is defined. The following constitute a binary relation, but can be extended to $n-$ary relations:
+\begin{enumerate}
+    \item A subset $ R\subseteq A\times A$, the set of all possible ordered pairs of elements of $A$.
+    \item A membership function, $R:A\times A \to \{0,1\}$. This function describes whether or not a ordered pair is related. It is particularly convenient because the range set of the function can be modified to capture more complex relations.
+    \item A graph $(A,R)$, where nodes represent elements of $A$ and edges connect elements that are related elements under the relation $R$. This representation is particularly useful for visualizing the relation, but is limited to relations on finite sets.
+\end{enumerate}
+We will further discuss the characteristics of each representation, as well as how to translate between representations. It is important to note that although these representations are equivalent, some features that can be captured by one representation may not transfer to another, so it is important to consider which type best suits the needs of the setting in which it is used. For any of these representations, we indicate a relationship between two elements via the following notation. Given $R$, a relation on a set $A$ we indicate that two elements, $a,b\in A$ are related as $aRb$, meaning $(a,b)\in R$. Similarly we indicate that two elements are not related as $aR'b$, meaning $(a,b)\notin R$. Some categories a relation can fall into are:
+\begin{enumerate}
+    \item Symmetric: A relation $R$ is called symmetric if for all $a,b\in A$, if $a$ is related to $b$ then $b$ is related to $a$. Or more formally, $aRb \implies bRa$. An example of this type of relation is "Is married to" on the set of people, because if someone is married to their partner, their partner is also married to them.
+    \item Reflexive: If every element in a set is related to itself then the relation is called \emph{reflexive}. Formally this means $\forall a\in A$ $aRa$. An example of this relation is the less than or equal to, $\leq$ relation. This is because every number is equal to itself, so $\forall a\in A$ $a\leq a$. 
+    \item Transitive: For any $a,b,c\in A$, if $a$ is related to $b$ and $b$ is related to $c$ implies $a$ is related to $c$, then the relation is called \emph{transitive}. Formally this means $aRb\ \wedge\ bRc\implies aRc$. An example of this type of relation is the subset relation because if a set $A\subseteq B$ and $B\subseteq C$ then $A\subseteq C$ because all the elements of $A$ are contained in $B$ and all the elements of $B$ are contained in $C$, so all the elements of $A$ are contained in $C$.
+\end{enumerate}
+We will now discuss the different representations of a relation and how one would go about translating one to another. Recall that a relation is fundamentally a way of associating elements of a set, so there are many different, equivalent, ways to represent this idea.
+
+\subsection{Graph representation}
+The graph representation of a relation is a good way of visually showing the structure of a relation. The graph works by indicating the existence of a relationship between two elements by connecting them via an edge. This edge is directed in general, meaning if $aRb$ then the edge connecting $a$ and $b$ would have an arrow pointing to $b$. In the case of a symmetric relation, the graph is undirected, since every relationship is bidirectional. For a reflexive relation we omit the looped arrow from an element to itself for simplicity, but it is implied that one exists, since every element is related to itself. If a relation is not necessarily symmetric then we would include this loop if an element is related to itself. Likewise for a transitive relation for a chain of related elements we would omit the edges connecting elements of the chain to each other so as to avoid clutter in the graph, even though they are guaranteed to be present. As mentioned earlier, this representation works for finite sets, but not for infinite, because we can not have a graph with infinite nodes. For this type of relation, we can translate it into the others via the following algorithm: Given $G = (A,R)$ where $A$ is our set and $R$ is the relation on $A$, representing the set of edges in the graph. We say that if two elements $a,b\in A$ are related, then there exists an edge between them, meaning $(a,b)\in R$. This is the same that saying $(a,b)\in R \subseteq A\times A$ for the subset representation of the relation. For the function representation we would say $R(a,b) = 1$ where $R:A\times A\to \{0,1\}$, where $1$ represents belonging to the relation and $0$ not belonging. 
+
+\subsection{Subset representation}
+The subset representation of a relation is the most concise representation of a relation, but suffers from difficulty in defining this subset with the same concision. We say that $R \subseteq A\times A$, where $R$ is the set of all ordered pairs $(a,b)\in A\times A$, $A\times A$ being the set of all possible ordered pairs that can be made from elements of $A$, $R$ being the subset of only the related elements. This is to say if $(a,b)\in R$ then the elements $a$ and $b$ are related, if $(a,b)\notin R$ then they are not. To translate this representation to a graph, we would construct the graph $G = (A,R)$ where $A$ is our set of interest and $R$ is the subset as defined. This graph has as its nodes the elements of $A$ and its edges come from the ordered pairs $(a,b)\in R$. For a relation $R\subseteq A\times A$, we would construct a function such that if $(a,b)\in R$, then $f(a,b) = 1$, or any other value representing membership, otherwise if $(a,b)\notin R$ then $f(a,b) = 0$, or non membership. By convention we label this function $R: A\times A\to {0,1}$. 
+
+\subsection{Function representation}
+The function representation is the most flexible representation of a relation because it can represent any type of relation, not just those on finite sets or member not member relations, as the graph and subset representations do, respectively. This representation defines the relation as a function $R:A\times A\to M$ where $A$ is our set of interest and $M$ is a membership set. The flexibility of this representation comes from the flexibility of the set $M$. It can be $M=\{0,1\}$ as we have seen, where $1$ indicates membership and $0$ non membership or $M=[0,1]$ to represent a relation where elements have degrees of relatedness between $0$ and $1$. There are many more examples of what form $M$ can take that capture a wide range of relation types. To translate between the other types we use the following construction (for simplicity assume $M=\{0,1\}$): If $R(a,b) = 1$ for $a,b\in A$ then the nodes $a,b$ have an edge between them, or $(a,b)\in R$ for the graph and subset representations respectively. If $R(a,b) = 0$ then $a,b$ do not have an edge between them and $(a,b)\notin R$. 
+
+Recall that in these definition we used a binary relation because of its relative notational simplicity, but relations can extend to $n$ elements. This would include the following modification: instead of having $A\times A$ we would have $A\times A\times ... \times A = A^n$, the $n$th cross product of $A$ with itself. 
+\end{document}
