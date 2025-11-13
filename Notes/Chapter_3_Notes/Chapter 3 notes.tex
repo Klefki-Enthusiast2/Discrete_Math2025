@@ -1,0 +1,205 @@
+\documentclass{maatext}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{tikz, enumerate, mathrsfs, tkz-graph, tkz-berge, xcolor}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{fact}{Fact}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{examples}[theorem]{Examples}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{exercises}[theorem]{Exercises}
+\newtheorem{notation}[theorem]{Notational Convention}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\numberwithin{section}{chapter}
+\numberwithin{equation}{chapter}
+\newcommand{\BbN}{\mathbb{N}}
+\newcommand{\BbR}{\mathbb{R}}
+\newcommand{\SB}{\mathscr{B}}
+\newcommand{\SF}{\mathscr{F}}
+\newcommand{\SG}{\mathscr{G}}
+\newcommand{\SP}{\mathscr{P}}
+\newcommand{\SU}{\mathscr{U}}
+\definecolor{EdgeRed}{RGB}{220,40,40}
+\definecolor{EdgeGreen}{RGB}{20,140,20}
+\tikzset{
+  vtx/.style   = {circle, draw=black, fill=white, inner sep=2pt, minimum size=20pt, font=\bfseries},
+  ered/.style  = {line width=1.2pt, draw=EdgeRed},
+  egreen/.style= {line width=1.2pt, draw=EdgeGreen, dashed}
+}
+
+
+% For Relations
+\newcommand{\rel}[2]{_{#1}\hspace{-3pt}\mathrel{R}_{#2}}
+\newcommand{\nrel}[2]{_{#1}\hspace{-3pt}\not\mathrel{R}_{#2}}
+
+%    For a single index; for multiple indexes, see the manual
+%    "AMS Author Handbook, Monograph Classes", included in the
+%    author package).
+\makeindex
+
+\begin{document}
+
+\mainmatter
+
+\chapter{Graph Limits}
+
+{\color{red} It is to note that in the below typesetting, a colon is used in set definitions instead of a vertical bar to separate objects and conditions. Further italics are created by the ''$\backslash \text{textit}\{\}$'' command instead of the ''$\backslash \text{emph}\{\}$'' command (the latter should be used as it is better for handling logical markup). Mathmode is achieved by \$ instead of the pairings \textbackslash[ and \textbackslash]. There are likely other mannerisms present that do not match the original typesetting.}
+
+\section{Nov. 4 Notes}
+In chapter 1 we defined a graph $(G,R)$ as a structure where $G$ is a set of points, and $R$ as some relation on $G$. Using ideas defined in chapter 2 we can begin discussing limits of graphs.
+
+Consider the family of a graph
+$$(G_n, R_n)_{n \in \mathbb{N}} \overset{\mathscr{U}}\to (G,R)$$
+where $(G,R)$ is the $\mathscr{U}$-limit of the family $(G_n, R_n)_{n \in \mathbb{N}}$.
+
+Suppose we are given a family of graphs
+$$(G_1, R_1), (G_2, R_2), \dots$$
+an an ultrafilter $\mathscr{U}$ on $\mathbb{N}$, we define the $\mathscr{U}$-limit $(G, R)$ of the family $(G_n, R_n)_{n \in \mathbb{N}}$ as follows.
+
+Consider the Cartesian product $\prod_{n\in \mathbb{N}} G_n$ which consists of all the sequences  $(a_n)_{n \in \mathbb{N}}$, where $a_n \in G$ for all $n \in \mathbb{N}$, this will be $G$.
+
+Now for $R$, suppose $a,b \in \prod_{n \in \mathbb{N}} G_n$, i.e.,
+\begin{align*}
+a &= (a_1, a_2, \dots)\\
+b &= (b_1, b_2, \dots)
+\end{align*}
+we define 
+\begin{align*}
+a \mathrel{R} b &= \{n \in \mathbb{N} : a_n \mathrel{R}_n b_n \} \in \mathscr{U}\\
+a \not\mathrel{R} b &= \{n \in \mathbb{N} : a_n \not\mathrel{R}_n b_n \} \in \mathscr{U}.
+\end{align*}
+This can be seen as finding whether almost every element in $a$ is related to, or not related to, every element in $b$ pairwise.
+
+\newpage
+
+\section{Nov. 11 Notes}
+
+Consider we are given a sequence of graphs
+$$\mathscr{G}_1 = (G_1,R_1), \mathscr{G}_2 = (G_2,R_2), \dots$$
+
+Q1: Do these graphs converge to a graph-limit?
+
+Q2: Which properties of $\mathscr{G}_1, \mathscr{G}_2, \dots$ 
+''transfer'' to the graph-limit and which do not?
+
+Fix a non-principle ultrafilter $\mathscr{U}$ on the indexing set $\mathbb{N} = \{1, 2, \dots \}$ we will show there is a graph $\mathscr{G}$ such that
+$$\mathscr{G}_n = (G_n, R_n)_{n \in \mathbb{N}} \overset{\mathscr{U}}\to (G,R) = \mathscr{G}$$
+
+\begin{center}\color{red}
+Iovino said that the below section should be at the start of the chapter.
+\end{center}
+
+Remark, given any sets $A_1, A_2, \dots$ we define the Cartesian product
+$$\prod_{n \in \mathbb{N}} A_n = \{ (x_n)_{n \in \mathbb{N}} : x_n \in A_n \}$$
+If $x = (x_n)_{n \in \mathbb{N}}$ is a sequence in $\prod_{n \in \mathbb{N}} A_n$ this is called the \textit{n-th coordinate} of $x$.
+
+The function
+\begin{align*}
+P_n : \prod_{j \in \mathbb{N}} A_j &\to A_n\\
+x &\mapsto x_n
+\end{align*}
+
+\begin{center}\color{red}
+End of section
+\end{center}
+Now constructing the $\mathscr{U}$-limit of $\mathscr{G}_1, \mathscr{G}_2, \dots$\\
+\textbf{First} we let $G = \prod_{n \in \mathscr{N}} G_n$. Now fix any $x,y \in G$, then 
+\begin{align*}
+x &= (x_1, x_2, \dots)\\
+y &= (y_1, y_2, \dots).
+\end{align*}
+Define a relation on $G$ such that
+$$x \sim y \iff \{ n : x_n = y_n \} \in \mathscr{U}$$
+Claim: $\sim$ is an equivalence relation, i.e., the relation is reflexive, symmetric, and transitive.
+
+\begin{proof}
+We will show the relation $\sim$ is reflexive, symmetric, and transative. Let $x = (x_n)_{n \in \mathbb{N}}$, $y = (y_n)_{n \in \mathbb{N}}$, and $z = (z_n)_{n \in \mathbb{N}}$ with $x \sim y$ and $y \sim z$.
+\begin{enumerate}
+\item The relation $\sim$ is reflexive since 
+$$x \sim x \iff \{ n : x_n = x_n\} = \mathbb{N} \color{red}{\in \mathscr{U}}$$
+The entire indexing set $\mathbb{N}$ is $\mathscr{U}$-large by property 1 of a filter.
+\item The relation $\sim$ is symmetric since
+$$x \sim y \iff \{ n : x_n = y_n \} = \{ n : y_n = x_n \} \iff y \sim x$$
+therefore $x \sim y \iff y \sim x$.
+\item The relation $\sim$ is transitive since
+$$x \sim y \text{ and } y \sim z \iff  \{ n : x_n = y_n \} \cap  \{ n : y_n = z_n \}$$
+and
+$$x \sim z \iff \{ n : x_n = y_n \text{ or } y_n = z_n \}\color{red}\color{red} \leftarrow \text{check this}$$
+we observe
+$$\{ n : x_n = y_n \text{ or } y_n = z_n \} \supseteq \{ n : x_n = y_n \} \cap  \{ n : y_n = z_n \}.$$
+Filters are closed under supersets, hence $x \sim z$ holds. 
+\end{enumerate}
+\end{proof}
+
+If $x,y\in G$, we regard $x$ and $y$ as equal if $x \sim y$.\\
+\textbf{Second}, for $x,y \in G$ define $x \mathrel{R} y$ if and only if $x_n \mathrel{R}_n y_n$ almost everywhere (a.e.).
+\begin{align*}
+x \mathrel{R} y &= \{ n : x_n \mathrel{R}_n y_n \} \in \mathscr{U}\\
+x \not\mathrel{R} y &= \{ n : x_n \not\mathrel{R}_n y_n \} \in \mathscr{U}
+\end{align*}
+Thusly we have defined the graph-limit $\mathscr{G}=(G,R)$.
+
+\begin{definition}
+The graph $\mathscr{G}_\mathscr{U} = (G,R)$ is called the \textit{$\mathscr{U}$-Ultraproduct} or the \textit{$\mathscr{U}$-limit} of $\mathscr{G}_1, \mathscr{G}_2,\dots$. 
+\end{definition}
+
+Remark: The preceeding construction works just as well if we replace $\mathbb{N}$ by any infinite set $I$ or if we replace $\mathscr{G}_n$ by relational structure $(G_i, R_i)_{i \in I}$.
+
+Notation:
+$$\mathscr{G}_n \overset{\mathscr{U}} \to \mathscr{G}_\mathscr{U}$$
+or
+$$\mathscr{G}_\mathscr{U} = \mathscr{U}\text{-}\lim\mathscr {G}_n$$
+or
+$$\mathscr{G}_\mathscr{U} = \prod_{n \in \mathbb{N}} \mathscr{G}_n \setminus \mathscr{U}. \color{red} \leftarrow \text{check this}$$
+
+\subsection{Transfer Theorems}
+\begin{definition}
+\textit{First order statements} are made up of Logical Connectives and Quantifiers
+$$\text{Logical Connectives: } \neg \text{ (NOT)}  , \wedge \text{ (AND)}, \vee \text{ (OR)}$$
+$$\text{Quantifiers: } \forall \text{ (universal quantification)}  , \exists \text{ (existential quantification)}$$
+\end{definition}
+
+Let $\mathscr{U}$ be an ultrafilter on $I$, an indexed set. If $A,B\subseteq I$, then
+\begin{enumerate}
+\item $A \cap B \in \mathscr{U}$ if and only if $A \in \mathscr{U}$ and $B \in \mathscr{U}$
+\item $A \cup B \in \mathscr{U}$ if and only if $A \in \mathscr{U}$ or $B \in \mathscr{U}$
+\item $A^\mathsf{c} \in \mathscr{U}$ if and only if $A \not\in \mathscr{U}$
+\end{enumerate}
+
+\begin{proof}
+Let $\mathscr{U}$ be an ultrafilter on $I$, an indexed set and $A,B\subseteq I$.
+
+(1) Assume $A \cap B \in \mathscr{U}$, then $A \supseteq A \cap B$ and $B \supseteq A \cap B$ so $A \in \mathscr{U}$. Since filters are closed under supersets, thus $A \in \mathscr{U}$ and $B \in \mathscr{U}$. Conversely, assume $A \in \mathscr{U}$ and $B \in \mathscr{U}$, then $A \cap B \in \mathscr{U}$ by the intersection property of filters.
+
+(2) Assume $A \cup B \in \mathscr{U}$ and $A^\mathsf{c}, B^\mathsf{c} \in \mathscr{U}$, then by closure of intersection $A^\mathsf{c} \cap B^\mathsf{c} \in \mathscr{U}$, by De Morgan's Laws${\color{red}^\dagger}$ $A^\mathsf{c} \cap B^\mathsf{c} = (A \cup B)^\mathsf{c}$, this is a contraction since {\color{red} reasoning}, hence  $A \in \mathscr{U}$ or $B \in \mathscr{U}$. Conversly, assume $A \in \mathscr{U}$ or $B \in \mathscr{U}$, since $A \cup B \supseteq A \in \mathscr{U}$ or $A \cup B \supseteq B \in \mathscr{U}$, by the closure under supersets it follows that $A \cup B \in \mathscr{U}$.
+\begin{center} \color{red} \textdagger : theorem required\end{center}
+
+(3) This holds by the definition of an ultrafilter.
+\end{proof}
+
+\begin{corollary}
+Consider a family of graphs
+$$\mathscr{G}_1 = (G_1, R_1), \mathscr{G}_2 = (G_2, R_2), \dots$$
+Let $\mathscr{G}$ be the $\mathscr{U}$-limit of $\mathscr{G}_1, \mathscr{G}_2, \dots$ if $p(x), q(x)$ are properties {\color{red} [should we define what a property is?]} of graphs, we say 
+$$p(x) \text{ holds in } \mathscr{G} \text{ if and only if } \{ x \in \mathscr{G} : p(x) \text{ true} \}\in \mathscr{U}$$
+
+\begin{center} \color{red} check below \end{center}
+
+$$p(x) \wedge q(x) \text{ holds in } \mathscr{G} \text{ if and only if } \{ x \in \mathscr{G} : p(x) \wedge q(x) \text{ true} \}\in \mathscr{U}$$
+$$p(x) \vee q(x) \text{ holds in } \mathscr{G} \text{ if and only if } \{ x \in \mathscr{G} : p(x) \vee q(x) \text{ true} \}\in \mathscr{U}$$
+$$\neg p(x) \text{ holds in } \mathscr{G} \text{ if and only if } \{ x \in \mathscr{G} : \neg p(x) \text{ true} \}\in \mathscr{U}$$
+$$\exists p(x) \text{ holds in } \mathscr{G} \text{ if and only if } \{ x \in \mathscr{G} : \exists p(x) \text{ true} \}\in \mathscr{U}$$
+$$\forall p(x) \text{ holds in } \mathscr{G} \text{ if and only if } \{ x \in \mathscr{G} : \forall p(x) \text{ true} \}\in \mathscr{U}$$
+\end{corollary}
+
+\end{document}
